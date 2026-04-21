@@ -42,6 +42,18 @@ const routes = {
     tokens: [{"old":"/logout","type":0,"val":"logout","end":""}],
     types: placeholder as Registry['session.destroy']['types'],
   },
+  'movies_search': {
+    methods: ["GET","HEAD"],
+    pattern: '/search',
+    tokens: [{"old":"/search","type":0,"val":"search","end":""}],
+    types: placeholder as Registry['movies_search']['types'],
+  },
+  'movies_show': {
+    methods: ["GET","HEAD"],
+    pattern: '/media/:type/:id',
+    tokens: [{"old":"/media/:type/:id","type":0,"val":"media","end":""},{"old":"/media/:type/:id","type":1,"val":"type","end":""},{"old":"/media/:type/:id","type":1,"val":"id","end":""}],
+    types: placeholder as Registry['movies_show']['types'],
+  },
 } as const satisfies Record<string, AdonisEndpoint>
 
 export { routes }

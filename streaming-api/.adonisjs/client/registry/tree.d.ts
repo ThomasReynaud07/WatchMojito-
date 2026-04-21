@@ -12,4 +12,6 @@ export interface ApiDefinition {
     store: typeof routes['session.store']
     destroy: typeof routes['session.destroy']
   }
+  moviesSearch: typeof routes['movies_search']
+  moviesShow: typeof routes['movies_show']
 }

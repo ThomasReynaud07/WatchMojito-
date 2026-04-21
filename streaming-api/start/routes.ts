@@ -28,3 +28,6 @@ router
     router.post('logout', [controllers.Session, 'destroy'])
   })
   .use(middleware.auth())
+
+router.get('/search', 'movies#search')
+router.get('/media/:type/:id', 'movies#show')
